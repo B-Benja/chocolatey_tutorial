@@ -32,4 +32,4 @@ Done. More info: [Chocolatey Documentation](https://chocolatey.org/install).
 On the [Chocolatey Website](https://community.chocolatey.org/packages) you can find all available packages. For each package you can find detailed information about the software, installation, upgdate and uninstallation commands.
 
 Using the example of [Firefox](https://community.chocolatey.org/packages/Firefox#install):
-![Image of installation commands (example Firefox)](/least-github-pages/assets/1.png)
+![Image of installation commands (example Firefox)](/1.png)

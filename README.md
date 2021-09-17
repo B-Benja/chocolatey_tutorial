@@ -83,20 +83,6 @@ choco install atom -y
 choco install notepadplusplus -y
 choco install texstudio -y
 choco install vscode --params "/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders" vscode --params "/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders" -y
-
-:::: Research / Work
-choco install foxitreader --ia '/MERGETASKS="!desktopicon,!connectedpdf"' -y
-choco install miktex -y
-choco install zotero -y
-choco install rtools -y
-:: choco install python --pre 
-choco install miniconda3 -y
-choco install pycharm-edu -y
-choco install terminus -y
-choco install git -y
-choco install r.project -y
-choco install r.studio -y
-choco install winscp -y
 ```
 
 The complete .bat file I use can be found [here](/Chocolatey_myInstallScript.bat).

@@ -50,31 +50,54 @@ choco install firefox
 
 Example of using additional Parameters. E.g. you don’t want a Desktop Shortcut:
 
-'''
+```
 choco install firefox --params "/NoDesktopShortcute"
-'''
+```
 
 Chocolatey will now download Firefox from the official source and install it on your machine (the standard directory for installation is: ProgramData\chocolatey\lib)
 Of course, you can also install multiple programs at once. For example:
 
-'''
+```
 choco install firefox atom notepadplusplus zotero
-'''
+```
 
 If you need to set up multiple machines or reinstall windows regularly, you can create a batch file. In the example .bat file below, each program is listed on a new line to have a cleaner overview (the -y parameter is used to skip the confirmation within PowerShell):
 
-'''
-:: Install choco .exe and add choco to PATH
+```bat
+:::::::::: Personal install script
+
+:::: Install choco .exe and add choco to PATH
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+:::::: Cleans temp files once a week
+choco install choco-cleaner -y
+
+:::::: Install all the packages
 :::: Browsers
 choco install firefox -y
 choco install googlechrome -y
+choco install ungoogled-chromium -y
+
 :::: Text editors / IDEs
 choco install atom -y
 choco install notepadplusplus -y
 choco install texstudio -y
 choco install vscode --params "/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders" vscode --params "/NoDesktopIcon /NoContextMenuFiles /NoContextMenuFolders" -y
-'''
+
+:::: Research / Work
+choco install foxitreader --ia '/MERGETASKS="!desktopicon,!connectedpdf"' -y
+choco install miktex -y
+choco install zotero -y
+choco install rtools -y
+:: choco install python --pre 
+choco install miniconda3 -y
+choco install pycharm-edu -y
+choco install terminus -y
+choco install git -y
+choco install r.project -y
+choco install r.studio -y
+choco install winscp -y
+```
 
 The complete .bat file I use can be found [here](/Chocolatey_myInstallScript.bat).
 
@@ -82,27 +105,42 @@ The complete .bat file I use can be found [here](/Chocolatey_myInstallScript.bat
 ### Keep software up-to-date / other maintenance tasks
 
 To check for available updates, run
-`choco outdated`  (lists available updates)
+
+```choco outdated```  (lists available updates)
+
 To update a specific program (example: Firefox)
-`choco upgrade firefox`
+
+```choco upgrade firefox```
+
 To update all programs:
-`choco upgrade all`
+
+```choco upgrade all```
 
 More info: [Chocolatey Documentation](https://docs.chocolatey.org/en-us/choco/commands/upgrade)
 
 **Other useful commands:**
+
 To list all installed packages
-`choco list --local-only`
+
+```choco list --local-only```
+
 To delete a package (example Firefox):
-`choco uninstall firefox`
+
+```choco uninstall firefox```
+
 To freeze program updates (don’t update with the upgrade command), you can either pin the current version:
-`choco pin firefox` (won’t update until unpinned) or
-'choco upgrade all --except="firefox"' (skip an update once)
+
+```choco pin firefox``` (won’t update until unpinned) or
+
+```choco upgrade all --except="firefox"``` (skip an update once)
+
 
 More info: [Chocolatey Documentation](https://docs.chocolatey.org/en-us/choco/commands/pin#mainContent)
 
 **Cleaning Cache - free up space**
+
 To free up disk space by deleting unnecessart residual files (such as old installation files, log files, etc.), I recommend installing the (unofficial) Choco Cleaner script:
-'choco install choco-cleaner'
+
+```choco install choco-cleaner```
 
 More info: [(unofficial) Choco Cleaner (Script + Task)](https://community.chocolatey.org/packages/choco-cleaner)

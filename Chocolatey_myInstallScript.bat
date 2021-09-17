@@ -1,5 +1,5 @@
 :::::::::: Personal install script
-:: Instead listing all programs in one line (choco install program1 program2 ...),
+:: Instead of listing all programs in one line (choco install program1 program2 ...),
 :: the programs are listed line-by-line to easier make changes or 
 :: outcomment programs not needed anymore
 :::::::::: 

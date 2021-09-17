@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# Chocolatey
 
-You can use the [editor on GitHub](https://github.com/B-Benja/short_chocolatey_tutorial/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## What is Chocolatey?
+Chocolatey is a command line application installer for Windows based on a developer-centric package manager called NuGet. Unlike manual installations, Chocolatey adds, updates, and uninstalls programs in the background requiring very little user interaction.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Chocolatey has its own package feed that is created and maintained by the project’s community members.
 
-### Markdown
+Behind the scenes, most Chocolatey packages simply download a program’s official executable and install it without any further interaction from the user.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Advantages?
+* Mainly installs programs from official source.
+* Easy ‘one click’ (better: one command) solution to download and update software.
+* Huge variety of available and maintained programs.
+* Still control over updating schedule.
+* No need to manually check for updates.
 
-```markdown
-Syntax highlighted code block
+## How does it work?
+1.	Install Chocolatey (via PowerShell)
+2.	Check which program you want to install (via [their website](https://community.chocolatey.org/packages))
+3.	Install them via PowerShell
+4.	Keep them up-to-date / other maintenance tasks
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### Install Chocolatey
+Open PowerShell as Admin and run
 ```
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+Done. More info: [Chocolatey Documentation](https://chocolatey.org/install).
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Check which program you want to install
+On the [Chocolatey Website](https://community.chocolatey.org/packages) you can find all available packages. For each package you can find detailed information about the software, installation, upgdate and uninstallation commands.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/B-Benja/short_chocolatey_tutorial/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Using the example of [Firefox](https://community.chocolatey.org/packages/Firefox#install):
+![Image of installation commands (example Firefox)](1.png)

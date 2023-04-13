@@ -1,7 +1,8 @@
-:::::::::: Personal install script
-:: Instead of listing all programs in one line (choco install program1 program2 ...),
-:: the programs are listed line-by-line to easier make changes or 
-:: outcomment programs not needed anymore
+:::::::::: Chocolatey install script
+:: My personalized installation script is designed to simplify program installation by listing each program on a separate line.
+:: This makes it easy to modify or remove programs as needed, as opposed to 
+:: listing them all in one long line using the command "choco install program1 program2...".
+:: Source: https://github.com/B-Benja/short_chocolatey_tutorial
 :::::::::: 
 
 :::: Install choco .exe and add choco to PATH
